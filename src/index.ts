@@ -1,32 +1,44 @@
-import { Token } from "./Token.d.ts";
+import { Element, Token } from "./types.d.ts";
 
 const mdSplitter = (markdown: string): string[] =>
   markdown.split(/\r\n|\r|\n/).filter((f) => f !== "");
 
-const detectElement = (line: string): Token => {
-  switch (line.split(" ")[0]) {
+const getToken = (line: string): Token => {
+  const [elmType, ...value] = line.split(" ");
+  if (value.length === 0) return { head: "", value: elmType };
+  return { head: elmType, value: value.join(" ") };
+};
+
+const detectElementType = (token: Token): string => {
+  switch (token.head) {
     case "#":
-      return { elm: "h1", value: line.split(" ")[1] };
+      return "h1";
     case "##":
-      return { elm: "h2", value: line.split(" ")[1] };
+      return "h2";
     case "###":
-      return { elm: "h3", value: line.split(" ")[1] };
+      return "h3";
     case "####":
-      return { elm: "h4", value: line.split(" ")[1] };
+      return "h4";
     case "#####":
-      return { elm: "h5", value: line.split(" ")[1] };
+      return "h5";
     case "######":
-      return { elm: "h6", value: line.split(" ")[1] };
+      return "h6";
     default:
-      return { elm: "p", value: line };
+      return "p";
   }
+};
+
+const detectElement = (line: string): Element => {
+  const token = getToken(line);
+  const type = detectElementType(token);
+  return { type, value: token.value };
 };
 
 export const m2h = (markdown: string): string => {
   const lineArray = mdSplitter(markdown);
   lineArray.map((line) => {
-    const token = detectElement(line);
-    console.log(token);
+    const element = detectElement(line);
+    console.log("element: ", element);
   });
   return markdown;
 };
