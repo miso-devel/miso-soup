@@ -2,6 +2,6 @@
   "folders": [
     { "name": "miso-soup", "path": "." },
     { "name": "src", "path": "./src" },
-    { "name": "example/fresh", "path": "./example/fresh" }
+    { "name": "example-fresh", "path": "./example/fresh" }
   ]
 }

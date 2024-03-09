@@ -1,4 +1,4 @@
-import { MarkdownKey, MarkdownPair, MarkdownType } from "./types.d.ts";
+import type { MarkdownKey, MarkdownPair, MarkdownType } from "./types.d.ts";
 
 export const MARKDOWN_PAIR: MarkdownPair = {
   "#": "h1",

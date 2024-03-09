@@ -1,5 +1,5 @@
 import { MARKDOWN_KEYS, MARKDOWN_PAIR } from "./constants.ts";
-import { Element, MarkdownKey } from "./types.d.ts";
+import type { Element, MarkdownKey } from "./types.d.ts";
 
 const mdSplitter = (markdown: string): string[] =>
   markdown.split(/\r\n|\r|\n/).filter((f) => f !== "");
