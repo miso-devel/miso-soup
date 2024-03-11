@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0"
+  },
+  "tasks": {
+    "run": "deno run -A src/main.ts",
+    "example": "deno run -A ./example/index.ts",
+    "build": "deno run -A build.ts"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "https://esm.sh/react@18.2.0"
+  }
+}
