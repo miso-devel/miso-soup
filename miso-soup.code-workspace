@@ -1,7 +1,0 @@
-{
-  "folders": [
-    { "path": "." },
-    { "path": "./src" },
-    { "path": "./example/react" }
-  ]
-}

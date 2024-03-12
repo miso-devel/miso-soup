@@ -4,6 +4,5 @@
   "deno.lint": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
   "editor.formatOnSave": true,
-  "deno.suggest.imports.autoDiscover": true,
-  "deno.enablePaths": ["./"]
+  "deno.suggest.imports.autoDiscover": true
 }
